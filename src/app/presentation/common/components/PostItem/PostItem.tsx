@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import {
   Author,
   ButtonRemove,
@@ -7,31 +7,54 @@ import {
   SendBy,
 } from "./styled-components/styles";
 import deleteIcon from "@/app/presentation/assets/icons/delete.svg";
+import { Postx } from "@/app/interfaces/post.interface";
+export interface PostItemInterface {
+  itemPosted: Postx;
+  key: number;
+  posts: Postx[];
+  setPosts: Dispatch<SetStateAction<Postx[]>>;
+}
 
-export interface PostItemInterface {}
-
-const PostItem: React.FC<PostItemInterface> = () => {
+const PostItem: React.FC<PostItemInterface> = ({
+  itemPosted,
+  key,
+  posts,
+  setPosts,
+}) => {
+  const removeItem = async (id: string) => {
+    try {
+      await fetch(`/api.buildbox.itsolutions.test/posts/${id}`, {
+        method: "DELETE",
+      });
+      const removedPost = posts.filter((item) => {
+        return item.id !== id;
+      });
+      setPosts(removedPost);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
-    <Container>
-      <ButtonRemove>
-        <img src={deleteIcon} alt="Excluir" />
-      </ButtonRemove>
-      <div className="post-data">
-        <ImageItem
-          src="https://avatars.githubusercontent.com/u/59142372?s=400&u=b4e54ff8ed49f32efe8c28c93d941e0e5349af13&v=4"
-          alt="Excluir"
-        />
-        <div className="message-and-author">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            mattis ligula vel velit scelerisque iaculis. Nam mattis justo id
-            orci commodo, eu tempus purus cursus.
-          </p>
-          <SendBy>Enviado por</SendBy>
-          <Author>Rosada Luis</Author>
+    <>
+      <Container>
+        <ButtonRemove onClick={() => removeItem(itemPosted.id as string)}>
+          <img src={deleteIcon} alt="Excluir" />
+        </ButtonRemove>
+        <div className="post__data">
+          <ImageItem src={itemPosted.urlx} alt="Excluir" />
+          <div className="message-and-author">
+            {itemPosted.message.length >= 190 ? (
+              <p>{itemPosted.message.slice(0, 190) + "..."}</p>
+            ) : (
+              <p>{itemPosted.message}</p>
+            )}
+
+            <SendBy>Enviado por</SendBy>
+            <Author>{itemPosted.name}</Author>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 };
 
