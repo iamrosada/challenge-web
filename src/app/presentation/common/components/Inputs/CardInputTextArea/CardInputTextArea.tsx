@@ -1,4 +1,4 @@
-import { TextareaHTMLAttributes } from "react";
+import React, { TextareaHTMLAttributes } from "react";
 
 import { ErrorInputTextArea, StyledTextarea } from "./styled-components";
 

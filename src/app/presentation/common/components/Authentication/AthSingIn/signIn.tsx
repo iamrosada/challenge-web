@@ -86,7 +86,6 @@ const AuthSigIn = ({ authentication, storage }: SignInProps) => {
         <Image
           width="100%"
           alt={"Login Image"}
-          // objectFit={"cover"}
           src={"https://avatars.githubusercontent.com/u/41802223?s=200&v=80"}
         />
       </Flex>
