@@ -1,3 +1,4 @@
+import React from "react";
 import AuthSignUp from "../../common/components/Authentication/AthSignUp/signup";
 import { SignUpProps } from "./SignUp.types";
 

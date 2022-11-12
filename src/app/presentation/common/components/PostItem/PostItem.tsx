@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Dispatch, SetStateAction } from "react";
 import {
   Author,
@@ -7,12 +8,12 @@ import {
   SendBy,
 } from "./styled-components/styles";
 import deleteIcon from "@/app/presentation/assets/icons/delete.svg";
-import { Postx } from "@/app/interfaces/post.interface";
+import { Post } from "@/app/interfaces/post.interface";
 export interface PostItemInterface {
-  itemPosted: Postx;
+  itemPosted: Post;
   key: number;
-  posts: Postx[];
-  setPosts: Dispatch<SetStateAction<Postx[]>>;
+  posts: Post[];
+  setPosts: Dispatch<SetStateAction<Post[]>>;
 }
 
 const PostItem: React.FC<PostItemInterface> = ({

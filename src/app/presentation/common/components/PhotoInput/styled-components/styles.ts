@@ -12,10 +12,10 @@ export const StyledPhotoInput = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  label > img {
-    width: 88px;
-    height: 88px;
-    border-radius: 36px;
+  label > img#uploadImg {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
   input[type="file"] {
     display: none;
@@ -33,5 +33,14 @@ export const StyledPhotoInput = styled("div")`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    label > img#uploadImg {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+    }
   }
 `;

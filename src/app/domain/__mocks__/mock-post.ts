@@ -1,8 +1,8 @@
 import { RemoteAddPost } from "@/app/data/usecases/remote-add-post/remote-add-post";
-import { Postx } from "@/app/interfaces/post.interface";
+import { Post } from "@/app/interfaces/post.interface";
 import * as faker from "faker";
 
-export const mockPost = (): Postx => ({
+export const mockPost = (): Post => ({
   message: faker.datatype.string(),
   name: faker.datatype.string(),
   urlx: faker.internet.avatar(),

@@ -1,5 +1,5 @@
 import { LoadPosts } from "@/app/domain/usecases/loadPostList";
-import { Postx } from "@/app/interfaces/post.interface";
+import { Post } from "@/app/interfaces/post.interface";
 import { usePosts } from "@/app/presentation/modules/contexts/postItem";
 import React, { useEffect, useState } from "react";
 import PostItem from "../PostItem/PostItem";
@@ -10,7 +10,7 @@ export interface FeedInterface {
 
 const Feed: React.FC<FeedInterface> = ({ loadPost }) => {
   const { onGetFromToggle, getFromToggle } = usePosts();
-  const [posts, setPosts] = useState<Postx[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const handleLoadPosts = async () => {

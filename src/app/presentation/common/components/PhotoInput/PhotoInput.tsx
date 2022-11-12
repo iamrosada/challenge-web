@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { ChangeEvent } from "react";
 import { StyledPhotoInput } from "./styled-components/styles";
 import uploadImg from "@/app/presentation/assets/icons/upload.svg";
@@ -23,7 +22,7 @@ const PhotoInput: React.FC<PhotoInputProps> = ({
     <StyledPhotoInput>
       <label htmlFor="file-input">
         {!getPreviewImage ? (
-          <img src={uploadImg} alt="Adicionar foto" />
+          <img id="uploadImg" src={uploadImg} alt="Adicionar foto" />
         ) : (
           <ImageItem src={getPreviewImage.url} alt="Foto do usuário" />
         )}

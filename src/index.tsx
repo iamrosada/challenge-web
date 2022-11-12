@@ -7,8 +7,6 @@ import reportWebVitals from "./reportWebVitals";
 if (window.performance) {
   if (performance.navigation.type == 1) {
     localStorage.clear();
-  } else {
-    alert("This page is not reloaded");
   }
 }
 const root = ReactDOM.createRoot(

@@ -1,8 +1,8 @@
+import React from "react";
 import { PageRoutes } from "@/app/main/constants/page-routes";
 import { SignUpProps } from "@/app/presentation/pages/SignUp/SignUp.types";
 import {
   Button,
-  Checkbox,
   Flex,
   FormControl,
   FormLabel,
@@ -48,48 +48,50 @@ const AuthSignUp = ({ addAccount }: SignUpProps) => {
     navigate("/signin");
   };
   return (
-    <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
-      <Flex p={8} flex={1} align={"center"} justify={"center"}>
-        <Stack spacing={4} w={"full"} maxW={"md"}>
-          <Heading color={"white"} fontSize={"2xl"}>
-            Cria a sua conta da BuildBox.{" "}
-          </Heading>
-          <form onSubmit={handleAuthentication}>
-            <FormControl id="email">
-              <FormLabel color={"white"}>Nome</FormLabel>
-              <Input type="text" name="username" />
-            </FormControl>
-            <FormControl id="password" marginTop="10px">
-              <FormLabel color={"white"}>Palavra Passe</FormLabel>
-              <Input type="password" name="password" />
-            </FormControl>
+    <>
+      <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
+        <Flex p={8} flex={1} align={"center"} justify={"center"}>
+          <Stack spacing={4} w={"full"} maxW={"md"}>
+            <Heading color={"white"} fontSize={"2xl"}>
+              Cria a sua conta da BuildBox.{" "}
+            </Heading>
+            <form onSubmit={handleAuthentication}>
+              <FormControl id="email">
+                <FormLabel color={"white"}>Nome</FormLabel>
+                <Input type="text" name="username" />
+              </FormControl>
+              <FormControl id="password" marginTop="10px">
+                <FormLabel color={"white"}>Palavra Passe</FormLabel>
+                <Input type="password" name="password" />
+              </FormControl>
 
-            <Stack spacing={6}>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                align={"start"}
-                justify={"space-between"}
-              >
-                <Link color={"blue.500"} onClick={navigateTo}>
-                  Fazer Login
-                </Link>
+              <Stack spacing={6}>
+                <Stack
+                  direction={{ base: "column", sm: "row" }}
+                  align={"start"}
+                  justify={"space-between"}
+                >
+                  <Link color={"blue.500"} onClick={navigateTo}>
+                    Fazer Login
+                  </Link>
+                </Stack>
+                <Button type="submit" colorScheme={"green"} variant={"solid"}>
+                  Criar uma conta
+                </Button>
               </Stack>
-              <Button type="submit" colorScheme={"green"} variant={"solid"}>
-                Criar uma conta
-              </Button>
-            </Stack>
-          </form>
-        </Stack>
-      </Flex>
-      <Flex flex={1}>
-        <Image
-          width="100%"
-          alt={"Login Image"}
-          // objectFit={"cover"}
-          src={"https://avatars.githubusercontent.com/u/41802223?s=200&v=80"}
-        />
-      </Flex>
-    </Stack>
+            </form>
+          </Stack>
+        </Flex>
+        <Flex flex={1}>
+          <Image
+            width="100%"
+            alt={"Login Image"}
+            // objectFit={"cover"}
+            src={"https://avatars.githubusercontent.com/u/41802223?s=200&v=80"}
+          />
+        </Flex>
+      </Stack>
+    </>
   );
 };
 export default AuthSignUp;

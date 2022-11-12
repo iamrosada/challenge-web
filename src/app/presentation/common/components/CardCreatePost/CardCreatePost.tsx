@@ -1,11 +1,7 @@
-/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React, { useState, ChangeEvent, useEffect } from "react";
-import {
-  CardContainer,
-  CardContainerButton,
-  CardInput,
-  CardInputTextArea,
-} from "./styled-components";
+import { CardContainer, CardContainerButton } from "./styled-components";
 import deleteIcon from "@/app/presentation/assets/icons/trash.svg";
 import PhotoInput from "../PhotoInput/PhotoInput";
 import { LocalStorageAdapter } from "@/app/infra/cache/local-storage-adapter";

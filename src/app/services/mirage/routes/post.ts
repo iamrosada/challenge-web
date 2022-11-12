@@ -1,11 +1,11 @@
 import { Response, Request } from "miragejs";
 import { handleErrors } from "../server";
-import { Postx } from "../../../interfaces/post.interface";
+import { Post } from "../../../interfaces/post.interface";
 import { User } from "../../../interfaces/user.interface";
 export const create = (
   schema: any,
   req: Request
-): { user: User; post: Postx } | Response => {
+): { user: User; post: Post } | Response => {
   try {
     console.log(
       "req.requestBody",
@@ -13,7 +13,7 @@ export const create = (
     );
     const { name, message, urlx } = Object.fromEntries(
       req.requestBody as unknown as FormData
-    ) as Partial<Postx>;
+    ) as Partial<Post>;
 
     console.log("Uploaded file contents:", { name, message, urlx });
 
