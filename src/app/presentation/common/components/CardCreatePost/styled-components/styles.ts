@@ -1,54 +1,74 @@
 import styled from "styled-components";
 
 export const CardContainer = styled("form")`
-  width: 516px;
-  height: 423px;
   margin: 40px 425px 56px;
-  padding: 24px;
-  border-radius: 3px;
-  border: solid 1px #3b3b3b;
-  background-color: #313131;
-  .preview-image {
-    display: flex;
-    button {
-      background-color: ${(props) => props.theme.colors.card};
+  display: flex;
+  flex-direction: column;
 
-      margin-left: 0.6rem;
-      border: none;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      img {
-        width: 20px;
-      }
-    }
+  div#feedText {
+    width: 36px;
+    margin-top: 30px;
+    height: 17px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7a7a7a;
   }
-  > div#upload_img {
-    width: 88px;
-    height: 88px;
-    margin: 0 8px 16px 190px;
-    padding: 32px;
-    object-fit: contain;
-    border-radius: 36px;
-    border: solid 1px #4b4b4b;
-    background-color: rgba(75, 75, 75, 0);
-    > input#file-input {
-      display: none;
-    }
-  }
+  > main {
+    width: 516px;
+    height: 423px;
 
-  @media (max-width: 600px) {
-    & {
-      width: 90vw;
-    }
-
-    .buttons {
-      width: 100%;
+    padding: 24px;
+    border-radius: 3px;
+    border: solid 1px #3b3b3b;
+    background-color: #313131;
+    .preview-image {
+      display: flex;
       button {
-        height: 40px;
-        padding: 0 8px;
+        background-color: ${(props) => props.theme.colors.card};
+
+        margin-left: 0.6rem;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+    > div#upload_img {
+      width: 88px;
+      height: 88px;
+      margin: 0 8px 16px 190px;
+      padding: 32px;
+      object-fit: contain;
+      border-radius: 36px;
+      border: solid 1px #4b4b4b;
+      background-color: rgba(75, 75, 75, 0);
+      > input#file-input {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      & {
+        width: 90vw;
+      }
+
+      .buttons {
+        width: 100%;
+        button {
+          height: 40px;
+          padding: 0 8px;
+        }
       }
     }
   }

@@ -130,45 +130,54 @@ const CardCreatePost: React.FC<CardCreatePostInterface> = ({
     setImage(undefined);
   }
   return (
-    <CardContainer>
-      <div className="preview-image">
-        <PhotoInput
-          onChange={handleSelectImage}
-          getPreviewImage={getPreviewImage}
-        />
-        {getPreviewImage && (
-          <button type="button" onClick={() => removeImage()}>
-            <img src={deleteIcon} alt="Excluir Imagem" />
-          </button>
-        )}
-      </div>
+    <>
+      <CardContainer>
+        <main>
+          <div className="preview-image">
+            <PhotoInput
+              onChange={handleSelectImage}
+              getPreviewImage={getPreviewImage}
+            />
+            {getPreviewImage && (
+              <button type="button" onClick={() => removeImage()}>
+                <img src={deleteIcon} alt="Excluir Imagem" />
+              </button>
+            )}
+          </div>
 
-      <Input
-        placeholder="Digite seu nome"
-        id="name"
-        value={getName}
-        getMsgNameField={getMsgNameField}
-        onChange={(e) => verifyInputValue(e.target.id, e.target.value)}
-        onBlur={(e) => isOnBlur(e.target.id)}
-      />
-      <br />
-      <Textarea
-        placeholder="Mensagem"
-        id="message"
-        value={getMessage}
-        getMsgMessageField={getMsgMessageField}
-        onChange={(e) => verifyInputValue(e.target.id, e.target.value)}
-        onBlur={(e) => isOnBlur(e.target.id)}
-      />
-      <CardContainerButton>
-        <Button typeButton="secondary" type="reset" onClick={dischargeData}>
-          Descarte
-        </Button>
-        <Button typeButton={getTypeButton} type="button" onClick={handleSubmit}>
-          Publicar
-        </Button>
-      </CardContainerButton>
-    </CardContainer>
+          <Input
+            placeholder="Digite seu nome"
+            id="name"
+            value={getName}
+            getMsgNameField={getMsgNameField}
+            onChange={(e) => verifyInputValue(e.target.id, e.target.value)}
+            onBlur={(e) => isOnBlur(e.target.id)}
+          />
+          <br />
+          <Textarea
+            placeholder="Mensagem"
+            id="message"
+            value={getMessage}
+            getMsgMessageField={getMsgMessageField}
+            onChange={(e) => verifyInputValue(e.target.id, e.target.value)}
+            onBlur={(e) => isOnBlur(e.target.id)}
+          />
+          <CardContainerButton>
+            <Button typeButton="secondary" type="reset" onClick={dischargeData}>
+              Descarte
+            </Button>
+            <Button
+              typeButton={getTypeButton}
+              type="button"
+              onClick={handleSubmit}
+            >
+              Publicar
+            </Button>
+          </CardContainerButton>
+        </main>
+        <div id="feedText">Feed</div>
+      </CardContainer>
+    </>
   );
 };
 
