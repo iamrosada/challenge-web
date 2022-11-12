@@ -1,4 +1,5 @@
 const path = require("path");
+/* eslint-disable */
 module.exports = {
   webpack: {
     alias: {
