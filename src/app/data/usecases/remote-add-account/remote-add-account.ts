@@ -18,7 +18,7 @@ export class RemoteAddAccount implements AddAccount {
       method: "post",
       body: params,
     });
-    console.log("ADDACOUNT", httpResponse.body);
+
     switch (httpResponse.statusCode) {
       case HttpStatusCode.created:
         return httpResponse.body as AddAccount.Model;

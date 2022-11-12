@@ -16,7 +16,7 @@ const Feed: React.FC<FeedInterface> = ({ loadPost }) => {
     const handleLoadPosts = async () => {
       try {
         const result = await loadPost.load();
-        console.log(result, "resualt");
+
         setPosts(result.posts);
       } catch (error) {
         console.log(error);
@@ -28,7 +28,6 @@ const Feed: React.FC<FeedInterface> = ({ loadPost }) => {
   return (
     <>
       {posts.map((itemPosted, index) => {
-        console.log("index", index);
         return (
           <PostItem
             key={index}

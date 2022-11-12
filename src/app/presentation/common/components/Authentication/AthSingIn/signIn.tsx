@@ -26,7 +26,7 @@ const AuthSigIn = ({ authentication, storage }: SignInProps) => {
       name: formData.get("username") as string,
       password: formData.get("password") as string,
     };
-    console.log("vendo", userData);
+
     try {
       const account = await authentication.auth({
         username: userData.name,

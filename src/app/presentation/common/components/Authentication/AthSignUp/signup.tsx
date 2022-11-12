@@ -26,7 +26,7 @@ const AuthSignUp = ({ addAccount }: SignUpProps) => {
       name: formData.get("username") as string,
       password: formData.get("password") as string,
     };
-    console.log("vendo", userData);
+
     try {
       const account = await addAccount.add({
         username: userData.name,
@@ -38,7 +38,6 @@ const AuthSignUp = ({ addAccount }: SignUpProps) => {
         Boolean(account.user.username)
       ) {
         navigate(PageRoutes.SignIn);
-        console.log("vendosa", account);
       }
     } catch (error) {
       console.log(error);
